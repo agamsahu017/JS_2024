@@ -125,10 +125,61 @@ Write a function that returns the number of negative numbers in an array.
             return i;
           }
         }
-        return -1
+        return -1;
       }
 
       console.log("search ele ", searchElement(arr4, 19));
+
+      /*
+      Write a function countDigits(n) that takes an integer n and returns how many digits it contains.
+      */
+
+      function countDigits(x) {
+        if (x === 0) return 1;
+        x = Math.abs(x);
+        let count = 0;
+        while (x > 0) {
+          x = Math.floor(x / 10);
+          count++;
+        }
+        return count;
+      }
+
+      console.log(countDigits(4690));
+
+      /*
+      Write a function isPalindrome(x) that takes an integer x and returns true if it reads the same backward and forward; otherwise false.
+      */
+      function isPalindrome(x) {
+        if (x < 0) return false;
+        let xCopy = x;
+        let rev = 0;
+        while (x > 0) {
+          let rem = x % 10;
+          rev = rev * 10 + rem;
+          x = Math.floor(x / 10);
+        }
+        return xCopy === rev;
+      }
+
+      console.log(isPalindrome(1331));
+
+      /*
+      Write a function reverse(x) that takes a 32-bit signed integer and returns its digits reversed. If the reversed value overflows the 32-bit signed integer range, return 0.
+      */
+
+      function reverse(x) {
+        x = Math.abs(x);
+        let rev = 0;
+        while (x > 0) {
+          rem = x % 10;
+          rev = rev * 10 + rem;
+          x = Math.floor(x / 10);
+        }
+        return rev;
+      }
+
+      console.log(reverse(3456));
     </script>
   </body>
 </html>
